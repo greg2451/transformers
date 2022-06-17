@@ -84,7 +84,7 @@ jobs:
         machine_type: [single-gpu]
     runs-on: [self-hosted, docker-gpu, '${{ matrix.machine_type }}']
     container:
-      image: huggingface/transformers-all-latest-gpu
+      image: huggingface/transformers-all-latest-gpu-test
       options: --gpus 0 --shm-size "16gb" --ipc host -v /mnt/cache/.cache/huggingface:/mnt/cache/
     steps:
       - name: Echo folder ${{ matrix.folders }}
@@ -141,7 +141,7 @@ jobs:
         machine_type: [multi-gpu]
     runs-on: [self-hosted, docker-gpu, '${{ matrix.machine_type }}']
     container:
-      image: huggingface/transformers-all-latest-gpu
+      image: huggingface/transformers-all-latest-gpu-test
       options: --gpus all --shm-size "16gb" --ipc host -v /mnt/cache/.cache/huggingface:/mnt/cache/
     steps:
       - name: Echo folder ${{ matrix.folders }}
@@ -198,7 +198,7 @@ jobs:
         machine_type: [single-gpu]
     runs-on: [self-hosted, docker-gpu, '${{ matrix.machine_type }}']
     container:
-      image: huggingface/transformers-pytorch-deepspeed-latest-gpu
+      image: huggingface/transformers-pytorch-deepspeed-latest-gpu-test
       options: --gpus 0 --shm-size "16gb" --ipc host -v /mnt/cache/.cache/huggingface:/mnt/cache/
     steps:
       - name: Update clone
@@ -249,7 +249,7 @@ jobs:
         machine_type: [multi-gpu]
     runs-on: [self-hosted, docker-gpu, '${{ matrix.machine_type }}']
     container:
-      image: huggingface/transformers-pytorch-deepspeed-latest-gpu
+      image: huggingface/transformers-pytorch-deepspeed-latest-gpu-test
       options: --gpus all --shm-size "16gb" --ipc host -v /mnt/cache/.cache/huggingface:/mnt/cache/
     steps:
       - name: Update clone
