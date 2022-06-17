@@ -3,7 +3,7 @@ name: Build docker images (scheduled)
 on:
   push:
     branches:
-      - test_enable_pytorch_nightly_ci
+      - test_enable_pytorch_nightly_ci-none
 
 concurrency:
   group: docker-images-builds
